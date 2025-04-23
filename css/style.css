@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap');
+
+/* Global */
+:root{
+    --roboto: "roboto";
+    --yellow: #FFAE00;
+    --orange: #FF7800;
+    --dark: #252525;
+}
+*{
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: var(--roboto);
+}
+h1{
+    font-family: "Shrikhand", serif;
+    font-size: 30px;
+    font-weight: 400;
+ }
+h2{
+    font-family: "Shrikhand", serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+h3{
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+/* body{
+    margin: auto;
+} */
+
+ /* header */
+ header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+ header .left-arrow{
+    color: white;
+}
+
+nav{
+    display: none;
+}
+/* Section 1 FIND */
+#find{
+    background-color: var(--yellow);
+    text-align: center;
+    padding: 30px 3px;
+}
+#find p{
+    font-size: 15px;
+    font-weight: 300;
+}
+#find form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px 5px;
+}
+#find #location{
+    border: solid 1px var(--yellow);
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px var(--orange);
+    background-color: var(--yellow);
+    font-size: 15px;
+    padding: 5px;
+    &::placeholder{
+        color: black;
+    }
+}
+#find form button{
+    width: 40%;
+    align-self: center;
+    border: solid 1px linear-gradient(var(--orange), var(--yellow));
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px var(--orange);
+    background: linear-gradient(var(--orange), var(--yellow));
+    padding: 5px;
+    font-size: 12px;
+}
+/* Section 2 HOW */
+#how{
+    text-align: left;
+    padding: 30px 3px;
+}
+#how p{
+    padding: 16px;
+    box-shadow: 0px 4px 10px 0px lightgray;
+}
+#how div{
+    padding: 20px 15px;
+}
+#how p.one:before{
+    content: "1";
+    background: var(--orange);
+    color: white;
+    border-radius: 50px;
+    padding: 1px 5px;
+    position: absolute;
+    left: 8px;
+}
+#how p.two:before{
+    content: "2";
+    background: var(--orange);
+    color: white;
+    border-radius: 50px;
+    padding: 1px 5px;
+    position: absolute;
+    left: 8px;
+}
+#how p.three:before{
+    content: "3";
+    background: var(--orange);
+    color: white;
+    border-radius: 50px;
+    padding: 1px 5px;
+    position: absolute;
+    left: 8px;
+}
+/* Section 3 CHOOSE */
+#choose{
+    background-color: var(--yellow);
+}
+#choose article{
+    margin: 15px;
+    background-color: white;
+    border-radius: 20px;
+}
+#choose article img{
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+#choose h4{
+    font-size: 18px;
+    font-weight: 700;
+}
+#choose{
+    font-size: 15px;
+    font-weight: 300;
+}
+#choose > div > article > div > img{
+    width: 20px;
+}
+.thumbs{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+/* Footer */
+footer{
+    background-color: var(--dark);
+    color: white;
+    font-weight: 300;
+    padding: 10px;
+}
+footer ul{
+    list-style: none;
+    font-size: 15px;
+    padding: 5px;
+    line-height: 25px;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    &:hover{
+        color: var(--orange);
+    }
+}
+
+
+
+
+
+@media screen and (min-width:1025px){
+#burger{
+    display: none;
+}
+    
+}

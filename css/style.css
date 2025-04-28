@@ -27,9 +27,21 @@ h3{
     font-weight: 700;
     padding-bottom: 15px;
 }
-/* body{
-    margin: auto;
-} */
+.btn{
+    width: auto;
+    align-self: center;
+    border: solid 1px linear-gradient(var(--orange), var(--yellow));
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px var(--orange);
+    background: linear-gradient(var(--orange), var(--yellow));
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;   
+}
+.btn:hover{
+    background:linear-gradient(var(--yellow), var(--orange));
+    border: none;
+}
 
  /* header */
  header{
@@ -38,10 +50,13 @@ h3{
     align-items: center;
     padding: 10px;
 }
+header > a:nth-child(2){
+    color: black;
+    text-decoration: none;
+}
  header .left-arrow{
     color: white;
 }
-
 nav{
     display: none;
 }
@@ -49,7 +64,7 @@ nav{
 #find{
     background-color: var(--yellow);
     text-align: center;
-    padding: 30px 3px;
+    padding: 20px 3px;
 }
 #find p{
     font-size: 15px;
@@ -72,7 +87,7 @@ nav{
         color: black;
     }
 }
-#find form button{
+/* #find form button{
     width: 40%;
     align-self: center;
     border: solid 1px linear-gradient(var(--orange), var(--yellow));
@@ -81,7 +96,7 @@ nav{
     background: linear-gradient(var(--orange), var(--yellow));
     padding: 5px;
     font-size: 12px;
-}
+} */
 /* Section 2 HOW */
 #how{
     text-align: left;
@@ -90,6 +105,7 @@ nav{
 #how p{
     padding: 16px;
     box-shadow: 0px 4px 10px 0px lightgray;
+    position: relative;
 }
 #how div{
     padding: 20px 15px;
@@ -101,7 +117,7 @@ nav{
     border-radius: 50px;
     padding: 1px 5px;
     position: absolute;
-    left: 8px;
+    left: -8px;
 }
 #how p.two:before{
     content: "2";
@@ -110,7 +126,7 @@ nav{
     border-radius: 50px;
     padding: 1px 5px;
     position: absolute;
-    left: 8px;
+    left: -8px;
 }
 #how p.three:before{
     content: "3";
@@ -119,21 +135,46 @@ nav{
     border-radius: 50px;
     padding: 1px 5px;
     position: absolute;
-    left: 8px;
+    left: -8px;
 }
 /* Section 3 CHOOSE */
 #choose{
     background-color: var(--yellow);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#choose > div{
+    display: flex;
+    flex-direction: column;
 }
 #choose article{
     margin: 15px;
     background-color: white;
     border-radius: 20px;
+    position: relative;
 }
 #choose article img{
     width: 100%;
+    height: 200px;
+    object-fit: cover; 
     border-radius: 20px 20px 0 0;
 }
+.new:before{
+    content: "New!";
+    background-color: var(--orange);
+    font-family: "Shrikhand", serif;;
+    color: white;
+    padding: 0 10px;
+    font-size: 16px;
+    position: absolute;
+    rotate: -45deg;
+    top: 15px;
+    left: -6px;
+}
+#choose a{
+    color: black;
+    text-decoration: none;
+} 
 #choose h4{
     font-size: 18px;
     font-weight: 700;
@@ -142,20 +183,54 @@ nav{
     font-size: 15px;
     font-weight: 300;
 }
-#choose > div > article > div > img{
-    width: 20px;
+#choose hr{
+    border-color: var(--orange);
+    object-fit: cover;
+    margin: 8px;
 }
-.thumbs{
+.infos{
+    padding: 10px;
+}
+.thumbsContainer {
+    cursor: pointer;
+    caret-color: transparent;
+    /* display: block;
+    font-style: 24px; */
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 12px 0;
 }
+.thumbsContainer input {
+    display: none;
+}
+
+#choose > div > article > div > form > label > img.checked,
+#choose > div > article > div > form > label > img.unchecked{
+    width: 20px;
+    height: 20px;
+}
+.checked {
+    display: none;
+}
+.thumbsContainer input:checked ~ .checked {
+    display: inline;
+}
+.thumbsContainer input:checked ~ .unchecked {
+    display: none;
+}
+#choose > div > div{
+    display: flex;
+    justify-content: center;
+}
+
 /* Footer */
 footer{
     background-color: var(--dark);
     color: white;
     font-weight: 300;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 footer ul{
     list-style: none;
@@ -171,13 +246,73 @@ footer a{
     }
 }
 
+/* Responsive */
+/* Tablet */
 
+@media screen and (min-width:768px){
+    #find > form{
+    justify-self: center;
+    width: 50%;
+    }
+    #choose > div{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #choose article{
+        flex: 1 0 30%;
+    }
+    #choose > div:nth-child(3){
+        display: flex;
+        justify-content: center;
+    }
+    footer{
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    }
+    footer ul{
+        display: flex;
+        gap: 15px;
+    }
+}
 
-
-
+/* Desktop */
 @media screen and (min-width:1025px){
 #burger{
     display: none;
 }
-    
+body > header > a:nth-child(1){
+    display: none;
+}
+header{
+    justify-content: center;
+
+}
+header nav{
+    display: flex;
+}
+header ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+}
+header a{
+    text-decoration: none;
+    font-family: var(--roboto);
+    font-weight: 300;
+    color: black;
+}
+#how,
+h3{
+    max-width: 900px;
+    margin: auto;
+}
+#choose div{
+    max-width: 900px;
+    margin: auto;
+}
+#choose article {
+    flex: 1 0 35%;
+}
 }

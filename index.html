@@ -12,7 +12,7 @@
         <a href="/">
             <i class="fa-solid fa-arrow-left left-arrow"></i>
         </a>
-        <h1>Vividly</h1>
+        <a href="/"><h1>Vividly</h1></a>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -30,7 +30,7 @@
             <p>Work to be done? Our network offers you the best professionals around you.</p>
             <form action="#">
                 <input type="text" id="location" placeholder="Choose a location">
-                <button>Discover the list</button>
+                <button class="btn">Discover the list</button>
             </form>
         </section>
 
@@ -50,17 +50,83 @@
         <section id="choose">
             <h3>Chose your professionnal</h3>
             <div>
-                <article>
+                <article class="new">
                     <img src="img/constructeur1.jpg" alt="Picture of a man at work">
-                    <h4>Smith & Sons Construction Co.</h4>
-                    <p>Brignoles</p>
+                    <div class="infos">
+                    <a href="#"><h4>Smith & Sons Construction Co.</h4>
+                    <p>Brignoles</p></a>
                     <hr>
-                    <div class="thumbs">
-                        <p>Recommand this professionnal</p>
-                        <img src="img/thumbs-up-regular.svg" alt="Thumbs up">
+                    <form action="#">
+                        <label class="thumbsContainer">
+                            <p>Recommand this professionnal</p>
+                            <input type="checkbox">
+                            <img class="unchecked" src="img/thumbs-up-regular.svg">
+                            <img class="checked" src="img/thumbs-up-solid.svg" width="10px">       
+                        </label>
+                        </form>
                     </div>
                 </article>
-            </div>
+
+                <article class="new">
+                    <img src="img/constructeur2.jpg" alt="Picture of a man at work">
+                    <div class="infos">
+                        <a href="#">
+                            <h4>Greenway Builders</h4>
+                            <p>Tourves</p>
+                        </a>
+                    <hr>
+                    <form action="#">
+                        <label class="thumbsContainer">
+                            <p>Recommand this professionnal</p>
+                            <input type="checkbox">
+                            <img class="unchecked" src="img/thumbs-up-regular.svg">
+                            <img class="checked" src="img/thumbs-up-solid.svg" width="10px">       
+                        </label>
+                        </form>
+                    </div>
+                </article>
+
+                <article>
+                    <img src="img/constructeur3.jpg" alt="Picture of a man at work">
+                    <div class="infos">
+                        <a href="#">
+                            <h4>Summit Construction Services</h4>
+                            <p>Camps-La-Source</p>
+                        </a>
+                    <hr>
+                    <form action="#">
+                        <label class="thumbsContainer">
+                            <p>Recommand this professionnal</p>
+                            <input type="checkbox">
+                            <img class="unchecked" src="img/thumbs-up-regular.svg">
+                            <img class="checked" src="img/thumbs-up-solid.svg" width="10px">       
+                        </label>
+                        </form>
+                    </div>
+                </article>
+
+                <article>
+                    <img src="img/constructeur4.jpg" alt="Picture of a man at work">
+                    <div class="infos">
+                        <a href="#">
+                            <h4>Elite Builders Group</h4>
+                            <p>Vins-Sur-Caramy</p>
+                        </a>
+                    <hr>
+                    <form action="#">
+                        <label class="thumbsContainer">
+                            <p>Recommand this professionnal</p>
+                            <input type="checkbox">
+                            <img class="unchecked" src="img/thumbs-up-regular.svg">
+                            <img class="checked" src="img/thumbs-up-solid.svg" width="10px">       
+                        </label>
+                        </form>
+                    </div>
+                </article>
+                </div>
+                <div>
+                    <button class="btn">Load more</button>
+                </div>
 
         </section>
 

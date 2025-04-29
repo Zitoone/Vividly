@@ -16,19 +16,15 @@ h1{
     font-family: "Shrikhand", serif;
     font-size: 30px;
     font-weight: 400;
- }
-h2{
-    font-family: "Shrikhand", serif;
-    font-size: 24px;
-    font-weight: 400;
 }
-h3{
+h2{
     font-size: 24px;
     font-weight: 700;
     padding-bottom: 15px;
 }
 .btn{
-    width: auto;
+    width: fit-content;
+    display: block;
     align-self: center;
     border: solid 1px linear-gradient(var(--orange), var(--yellow));
     border-radius: 50px;
@@ -43,8 +39,53 @@ h3{
     border: none;
 }
 
+/* Home page */
+/* Loader */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--yellow);
+    animation: load 5s forwards;
+    position: fixed;
+    width: -webkit-fill-available;
+    z-index: 1;
+}
+@keyframes load {
+    0%{   display: flex;  
+    }
+    100%{
+        display: none
+    }    
+}
+.loader {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(0deg, white 50%, var(--orange) 100%);
+    animation: spin 5s infinite;
+}
+.inner-circle {
+    width: 90%;
+    height: 90%;
+    background-color: var(--yellow);
+    border-radius: 50%;
+}
+@keyframes spin {
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
  /* header */
- header{
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,10 +95,10 @@ header > a:nth-child(2){
     color: black;
     text-decoration: none;
 }
- header .left-arrow{
-    color: white;
+header .left-arrow{
+    visibility: hidden;
 }
-nav{
+header nav{
     display: none;
 }
 /* Section 1 FIND */
@@ -80,23 +121,15 @@ nav{
     border: solid 1px var(--yellow);
     border-radius: 50px;
     box-shadow: 0px 5px 10px var(--orange);
-    background-color: var(--yellow);
+    background-color: transparent;
+    outline: none;
     font-size: 15px;
     padding: 5px;
     &::placeholder{
         color: black;
     }
 }
-/* #find form button{
-    width: 40%;
-    align-self: center;
-    border: solid 1px linear-gradient(var(--orange), var(--yellow));
-    border-radius: 50px;
-    box-shadow: 0px 5px 10px var(--orange);
-    background: linear-gradient(var(--orange), var(--yellow));
-    padding: 5px;
-    font-size: 12px;
-} */
+
 /* Section 2 HOW */
 #how{
     text-align: left;
@@ -119,6 +152,7 @@ nav{
     position: absolute;
     left: -8px;
 }
+/* p:nth-child(1)::before A REFAIRE */
 #how p.two:before{
     content: "2";
     background: var(--orange);
@@ -175,7 +209,7 @@ nav{
     color: black;
     text-decoration: none;
 } 
-#choose h4{
+#choose h3{
     font-size: 18px;
     font-weight: 700;
 }
@@ -194,8 +228,6 @@ nav{
 .thumbsContainer {
     cursor: pointer;
     caret-color: transparent;
-    /* display: block;
-    font-style: 24px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -203,7 +235,6 @@ nav{
 .thumbsContainer input {
     display: none;
 }
-
 #choose > div > article > div > form > label > img.checked,
 #choose > div > article > div > form > label > img.unchecked{
     width: 20px;
@@ -232,6 +263,11 @@ footer{
     display: flex;
     flex-direction: column;
 }
+footer h2{
+    font-family: "Shrikhand", serif;
+    font-size: 24px;
+    font-weight: 400;
+}
 footer ul{
     list-style: none;
     font-size: 15px;
@@ -248,7 +284,6 @@ footer a{
 
 /* Responsive */
 /* Tablet */
-
 @media screen and (min-width:768px){
     #find > form{
     justify-self: center;
@@ -316,3 +351,93 @@ h3{
     flex: 1 0 35%;
 }
 }
+/* Professionnal page 1 */
+/* header */
+#professional header .left-arrow{
+    visibility: visible;
+    color: black;
+}
+/* Global */
+hr{
+    border: 1px solid var(--orange);
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+/* Article 1 presentation */
+#presentation{
+    img{
+    width: 100%;
+}
+    #presentation > div.infos{
+        text-align: center;
+        border-bottom: 1px solid var(--orange);
+    }
+    .unchecked,
+    .checked{
+        width: 20px;
+        height: 20px;
+    }
+    form{
+        margin-top: 10px;
+        padding: 10px;
+    }
+    #presentation > div:nth-child(4){
+        padding: 10px;
+    }
+    #presentation > div:nth-child(4) p{
+        font-size: 15px;
+        font-weight: 300;
+    }
+}
+#map{
+    padding: 10px;
+}
+#contact{
+    padding: 10px;
+
+    div:nth-child(2) > a:nth-child(1){
+            padding: 20px
+        }
+    div:nth-child(2){
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 30px;
+            /* gap: 15px; */
+        }
+    a{
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 300;
+    }
+    div>a>i{
+        color: var(--yellow);
+    }
+    h3{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 18px;
+        font-weight: 700;
+        padding-bottom: 30px;
+    }
+    #social{
+        font-size: 22px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    input{
+        padding: 10px;
+        border: 1px solid var(--orange);
+    }
+    input[type=text]:nth-child(4){
+        height: 100px;
+    }
+    }
+

@@ -176,6 +176,7 @@ header nav{
     background-color: var(--yellow);
     padding-top: 15px;
     padding-bottom: 15px;
+    text-align: center;
 }
 #choose > div{
     display: flex;
@@ -282,8 +283,7 @@ footer a{
     }
 }
 
-/* Responsive */
-/* Tablet */
+/* Responsive Tablet*/
 @media screen and (min-width:768px){
     #find > form{
     justify-self: center;
@@ -351,6 +351,7 @@ h3{
     flex: 1 0 35%;
 }
 }
+
 /* Professionnal page 1 */
 /* header */
 #professional header .left-arrow{
@@ -362,6 +363,10 @@ hr{
     border: 1px solid var(--orange);
     margin-top: 10px;
     margin-bottom: 30px;
+}
+#professional main{
+    max-width: 900px;
+    justify-self: center;
 }
 /* Article 1 presentation */
 #presentation{

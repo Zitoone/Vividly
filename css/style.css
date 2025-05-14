@@ -101,6 +101,28 @@ header .left-arrow{
 header nav{
     display: none;
 }
+.active{
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    ul{
+        list-style: none;
+    }
+    li{
+        margin: 10px 0;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        margin: 20px 0 20px 0;
+    }
+}
+header #burger{
+    cursor: pointer;
+}
 /* Section 1 FIND */
 #find{
     background-color: var(--yellow);
